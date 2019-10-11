@@ -54,7 +54,8 @@ class RefineLoss(nn.Module):
         
         return Lrefine
 
-bce_loss = nn.BCELoss(reduction='mean') # size_average
+bce_loss = nn.BCELoss(reduction=reduction_type) # size_average
+refine_loss = RefineLoss(reduction=reduction_type)
 
 def ba_loss(pred,target,ba,mask,grayimg):
     '''
